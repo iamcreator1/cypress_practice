@@ -30,16 +30,30 @@ describe('checking elements', () => {
       it('get sign in button', () => {
         cy.get('button.btn.btn-outline-white.header_signin')
       })
-  
-  
     })
+
+    context('get elements from main page', () => {
+        it('get sign up button', () => {
+            cy.get('button.hero-descriptor_btn.btn.btn-primary')
+        })
+    })
+
   
     context('get elements in the footer', () => {
       it('get official website link', () => {
         cy.get('a.contacts_link.display-4')
       })
+
       it('get email link', () => {
         cy.get('a.contacts_link.h4')
+      })
+
+      it('get linkedin link', () => {
+        cy.get('a[href="https://www.linkedin.com/school/ithillel/"]')
+      })
+
+      it('get page logo', () => {
+        cy.get('.footer_logo')
       })
     })
   })
