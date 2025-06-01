@@ -91,17 +91,32 @@ describe('Sign Up form', () => {
         })
     })
 
-    context.only('Test-cases for "Re-enter password" field', () => {
+    context('Test-cases for "Re-enter password" field', () => {
         it('verify "Passwords do not match" error', () => {
             SignupForm.passwordField.type('testPass1')
             SignupForm.reEnterPasswordField.type('testPass2').blur()
             SignupForm.passwordIsNotMatchError
         })
+
+        it('verify "reEnter Password is required" error', () => {
+            SignupForm.reEnterPasswordField.focus().blur()
+            SignupForm.reEnterPasswordIsRequiredError
+        })
+
+        it('verify error has red color borders', () => {
+            SignupForm.reEnterPasswordField.focus().blur()
+            SignupForm.redColoredBorder
+        })
     })
 
-    context('Test-cases for "[Register]" button', () => {
-        it('', () => {
-            cy.get('.modal-footer button.btn.btn-primary')
+    context.only('Test-cases for "[Register]" button', () => {
+        it('verify "successfull" registration', () => {
+            SignupForm.nameField.type('Dmytro')
+            SignupForm.lastNameField.type('Romanenko')
+            SignupForm.emailField.type('email+1@test.com')
+            SignupForm.passwordField.type('testPass1')
+            SignupForm.reEnterPasswordField.type('testPass1').wait(1000)
+            SignupForm.submitButton()
         })
     })
 

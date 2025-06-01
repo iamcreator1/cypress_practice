@@ -27,58 +27,67 @@ class SignUpFrom {
     ///Firstname errors
 
     get nameRequiredError() {
-        cy.contains('Name required')
+        return cy.contains('Name required')
     }
 
     get nameIsInvalidError() {
-        cy.contains('Name is invalid')
+        return cy.contains('Name is invalid')
     }
 
     get wrongLengthError() {
-        cy.contains('Name has to be from 2 to 20 characters long')
+        return cy.contains('Name has to be from 2 to 20 characters long')
     }
 
     get redColoredBorder() {
-        cy.should('have.css', 'border-color', 'rgb(220, 53, 69)')
+        return cy.should('have.css', 'border-color', 'rgb(220, 53, 69)')
     }
 
     /// LastName errors
     get lastNamerRequiredError() {
-        cy.contains('Last name required')
+        return cy.contains('Last name required')
     }
 
     get lastNameIsIvalidError() {
-        cy.contains('Last name is invalid')
+        return cy.contains('Last name is invalid')
     }
 
     get lastNameWrongLengthError() {
-        cy.contains('Last name has to be from 2 to 20 characters long')
+        return cy.contains('Last name has to be from 2 to 20 characters long')
     }
 
     ///Email error
 
     get emailIsIncorrectError() {
-        cy.contains('Email is incorrect')
+        return cy.contains('Email is incorrect')
     }
 
     get emailIsRequiredError() {
-        cy.contains('Email required')
+        return cy.contains('Email required')
     }
 
     /// Password error
     get passwordWrongLenghtError() {
-        cy.contains('Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter')
+        return cy.contains('Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter')
     }
 
     get passwordIsRequiredError() {
-        cy.contains('Password required')
+        return cy.contains('Password required')
     }
+
+    ///reEnter Password
 
     get passwordIsNotMatchError() {
-        cy.contains('Passwords do not match')
-
+        return cy.contains('Passwords do not match')
     }
 
+    get reEnterPasswordIsRequiredError() {
+        return cy.contains('Re-enter password required')
+    }
+
+    ///methods
+    submitButton() {
+        return cy.get('.modal-footer button').click()
+    }
 
 }
 

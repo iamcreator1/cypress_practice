@@ -17,6 +17,8 @@ class HomePage {
         this.signInButton.click()
     }
 
+
+
 }
 
 export default new HomePage()
