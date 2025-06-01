@@ -109,15 +109,19 @@ describe('Sign Up form', () => {
         })
     })
 
-    context.only('Test-cases for "[Register]" button', () => {
+    context('Test-cases for "[Register]" button', () => {
         it('verify "successfull" registration', () => {
+            const email = `user+${Date.now()}@test.com`
             SignupForm.nameField.type('Dmytro')
             SignupForm.lastNameField.type('Romanenko')
-            SignupForm.emailField.type('email+1@test.com')
+            SignupForm.emailField.type(email)
             SignupForm.passwordField.type('testPass1')
             SignupForm.reEnterPasswordField.type('testPass1').wait(1000)
             SignupForm.submitButton()
+            SignupForm.personalCabinetPage
         })
+
+
     })
 
 

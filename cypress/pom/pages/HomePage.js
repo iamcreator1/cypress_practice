@@ -1,3 +1,5 @@
+import SignupForm from "./forms/SignupForm"
+
 class HomePage {
 
     get signInButton() {
@@ -19,6 +21,9 @@ class HomePage {
 
 
 
+
+
 }
+
 
 export default new HomePage()

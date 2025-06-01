@@ -89,6 +89,15 @@ class SignUpFrom {
         return cy.get('.modal-footer button').click()
     }
 
+    get personalCabinetPage() {
+        cy.url('eq', 'https://qauto.forstudy.space/panel/garage')
+    }
+
+    get userAlreadyExist() {
+        cy.contains('User already exists')
+    }
+
+
 }
 
 export default new SignUpFrom()
